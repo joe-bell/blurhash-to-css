@@ -1,5 +1,7 @@
 # blurhash-to-css
 
+> An experimental [**plaiceholder**](https://github.com/joe-bell/plaiceholder) package 🖼
+>
 > Converts a [BlurHash](https://blurha.sh) to a
 > [CSS Object](https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style) using
 > [TypeScript](https://www.typescriptlang.org/), [Rust](https://www.rust-lang.org/), and
@@ -7,8 +9,6 @@
 
 [![NPM version](http://img.shields.io/npm/v/blurhash-to-css.svg?style=flat-square)](https://www.npmjs.com/package/blurhash-to-css)
 [![NPM downloads](http://img.shields.io/npm/dm/blurhash-to-css.svg?style=flat-square)](https://www.npmjs.com/package/blurhash-to-css)
-[![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
-[![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
 ## 🌩 Installation
 
@@ -31,7 +31,7 @@ An example can be seen at https://blurhash-to-css.vercel.app and the source is i
 
 ## 🤝 Credit
 
-- The image buffer to CSS conversion is a port to Rust of
+- The image buffer to CSS conversion is a port to Rust by [**@JamieMason**](https://github.com/jamiemason) of
   [this Script](https://github.com/joe-bell/plaiceholder/blob/d09df807df5d11c5d91a7971c2f90e2faa845843/packages/css/src/index.ts#L18-L51)
   originally by [**@joe-bell**](https://github.com/joe-bell) for
   [plaiceholder: Beautiful image placeholders, without the hassle](https://plaiceholder.co/).
@@ -41,9 +41,11 @@ An example can be seen at https://blurhash-to-css.vercel.app and the source is i
 ## 🕹 Usage
 
 ```ts
-import { blurhashToCss } from 'blurhash-to-css';
+import { blurhashToCss } from "blurhash-to-css";
 
-const css = blurhashToCss('eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWU');
+const css = blurhashToCss(
+  "eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWU"
+);
 ```
 
 ↓↓↓↓↓
@@ -62,7 +64,7 @@ const css = blurhashToCss('eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAW
 To use this a CommonJS project, you should destructure it like so:
 
 ```ts
-const { blurhashToCss } = require('blurhash-to-css');
+const { blurhashToCss } = require("blurhash-to-css");
 ```
 
 ## 🛠 Options
@@ -81,8 +83,11 @@ The BlurHash is decoded into a 10 x 10 image by default, you can make this large
 more like the final image, but it will also generate a lot more CSS.
 
 ```ts
-const css = blurhashToCss('eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWU', {
-  height: 30,
-  width: 30,
-});
+const css = blurhashToCss(
+  "eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWU",
+  {
+    height: 30,
+    width: 30,
+  }
+);
 ```
